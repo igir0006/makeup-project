@@ -1,0 +1,253 @@
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: #49a6e9;
+  --primary-500: #645cff;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --grey-400: #94a3b8;
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: 'Monoton', cursive;
+  --ff-secondary: 'Roboto Mono', monospace;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+}
+h1,
+h2 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+  font-family: var(--ff-primary);
+}
+h2 {
+  font-size: 2rem;
+  font-family: var(--ff-secondary);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2 {
+    line-height: 1;
+  }
+}
+
+/* Header */
+
+header {
+  background: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  padding: 1rem 1.5rem; 
+  height: 7rem;
+}
+.background {
+  padding: 1rem 1.5rem; 
+  box-shadow: var(--dark-shadow);
+}
+header h1 {
+  font-family: var(--ff-primary);
+  color: var(--clr-red-light);
+}
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.64);
+  display: none;
+  position: fixed;
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  top: 0;
+  left: 0;
+}
+.overlay.active {
+  display: block;
+}
+.overlay form {
+  /* the form to select the header background */
+  background-color: var(--clr-white);
+  display: inline-block;
+  font-family: var(--ff-primary);
+  margin-left: 1rem;
+  margin-top: 0.4rem;
+}
+.overlay select{
+  font-family: var(--ff-primary);
+  letter-spacing: 0.1rem ;
+}
+
+/* Navigation */
+
+nav{
+  display: inline-block;
+  color: var(--clr-grey-1);
+  margin-top: 1rem;
+  margin-left: 5rem;
+  box-shadow: var(--light-shadow);
+  font-family: var(--ff-secondary);
+  background-color: var(--clr-white);
+}
+label {
+  box-shadow: var(--dark-shadow);
+  background-color: var(--clr-white);
+  border-radius: 0.1rem;
+  padding: 0.4rem 0.2rem 0rem 1rem ;
+  color: black ;
+}
+select {
+  color: black ;
+  font-weight: 500;
+  box-shadow: var(--dark-shadow);
+  border-color:var(--clr-white) ;
+  padding: 0.5rem 1.5rem 0rem 1rem ;
+}
+nav select {
+  font-family: var(--ff-secondary);
+}
+
+/*Loading */
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid var(--grey-400);
+  border-radius: 50%;
+  border-top-color: var(--primary-500);
+  animation: spinner 0.6s linear infinite;
+}
+.loading {
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* main */
+
+main {
+  /* holds the grid of image cards */
+  padding: 2rem 0;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+}
+main p {
+  /* each of the cards holding an image and name */
+  position: relative;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding-bottom: 0rem;
+}
+main p span {
+  /* name label inside paragraphs */
+  position: absolute;
+  bottom: 1.5rem;
+  right: 6rem;
+  background: var(--clr-white);
+  color: var(--clr-black);
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  font-family: var(--ff-secondary);
+  border-radius: var(--radius);
+}
+main p:hover span {
+  /* hover effect on card */
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--clr-black);
+  color: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.005);
+}
+main h2.err {
+  /* error message styles */
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-secondary);
+}
+img {
+  /* border-radius: var(--radius); */
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  position: relative;
+}
+img:hover {
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.005);
+}
+
+
+
+  
+  
+  
+  

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- needs CSP meta tag -->
+    <meta http-equiv="Content-Security-Policy" content=" font-src * https://fonts.google/ ;
+    img-src 'self' * https://picsum.photos/  ;"/>
+    <!-- needs Google Font import for two fonts (header and body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- needs your CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- needs your main JS module -->
+    <title>Image Interface</title>
+  </head>
+  <body>
+    <header class="background">
+      <h1>Custom Images</h1>
+    </header>
+    <nav> 
+      <form>
+        <label for="sizes">Pick a Size to Load Images</label>
+        <select id="sizes" name="sizes" class="sizes">
+          <option selected disabled value="">Pick a size</option>
+          <!-- these are the sizes for the images in the grid -->
+          <option value="300">300 x 300</option>
+          <option value="400">400 x 400</option>
+          <option value="500">500 x 500</option>
+          <option value="600">600 x 600</option>
+        </select>
+      </form>
+    </nav>
+    <main>
+
+    </main>
+    <!-- the overlay is hidden by default shown by adding a class -->
+    <div class="overlay">
+      <form>
+        <label for="choices">Header Selection</label>
+        <select id="choices" name="choices" class="choices">
+          <option selected disabled value="">Pick an Image Type</option>
+          <!-- the values below are ids of specific images you can change them if you want -->
+          <option value="147">Water</option>
+          <option value="28">Forest</option>
+          <option value="185">Desert</option>
+          <option value="191">Mountain</option>
+        </select>
+      </form>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
